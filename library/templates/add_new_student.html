@@ -1,0 +1,40 @@
+<title>Add New Student</title>
+{% extends 'base.html' %} {% load static %}
+<html>
+  <body>
+    {% block content %}
+    <div class="">
+      <div class="form d-flex justify-content-center Roboto">
+        <form method="POST" action="">
+          {% csrf_token %}
+          <label class="label-default form-label">Student Details</label><br />
+
+          <label class="form-label">Roll Number:</label><br />
+          <div>{{form.roll_number}}</div>
+
+          <label class="form-label">Student Name:</label><br />
+          <div>{{form.fullname}}</div>
+          <label class="form-label">Student Address:</label><br />
+          <div>{{form.address}}</div>
+          <label class="form-label">Student Study Program:</label><br />
+          <div>{{form.program}}</div>
+          <br />
+          <label class="label-default form-label"
+            >Student Guardian/Parent Details</label
+          ><br />
+
+          <label class="form-label">Full name:</label><br />
+          <div>{{form.Guardian_name}}</div>
+          <label class="form-label">Valid Email:</label><br />
+          <div>{{form.Email}}</div>
+          <br />
+          <div>
+            <button type="submit" class="btn btn-success">Add Student</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    {% endblock %}
+  </body>
+</html>

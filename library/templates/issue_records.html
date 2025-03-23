@@ -1,0 +1,46 @@
+<title> Issue Records </title>
+{% extends 'base.html' %}
+
+<body>
+{% block content %}
+<table class="table table-striped table  table-warning table-striped-columns table-hover px-2 fs-2">
+<tr class = "text-center">
+    <th class = "table-primary border border-light">Student name </th>
+    <th class = "table-primary border border-light">Book ID </th>
+    <th class = "table-primary border border-light">Issue Date </th>
+    <th class = "table-primary border border-light">Due Date</th>
+    <th class = "table-primary border border-light">Remarks on Issuing</th>
+    <th class = "table-primary border border-light">Remarks on Return</th>
+    <th class = "table-primary border border-light">Returned</th>
+    <th class = "table-primary border border-light">Book Return</th>
+</tr>
+    {%for i in issue%}
+    <tr>
+        <td>{{i.student}}</td>
+        <td>{{i.book_instance.id}}</td>
+        <td>{{i.issue_date}}</td>
+        <td>{{i.due_date}}</td>
+        <td>{{i.remarks_on_issue}}</td>
+        <td>{{i.remarks_on_return}}</td>
+        <td>
+            {%if i.book_instance.Is_borrowed %}
+            <span><i class="fa fa-times-circle" style="color:rgb(128, 28, 0)"></i></span>
+            <td>
+                <a href="return_book/{{i.id}}"><i class="fa fa-arrow-alt-circle-right"></i><i class="fa fa-book"></i></a>|
+                
+                
+            </td>
+            {%else%}
+            <span><i class="fa fa-check-circle" style="color:green"></i></span>
+            <td><a href="edit_issued/{{i.id}}"><i class="fa fa-edit"></i> </a> | <a href="delete_issued/{{i.id}}"><i class="fa fa-trash-alt"></i></a></td>
+            {%endif%}
+        </td>
+
+        
+        
+    </tr> {% endfor %}
+</table>
+
+{% endblock %}
+</body>
+</html>
