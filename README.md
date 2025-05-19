@@ -58,6 +58,9 @@ Easily manage library records through an intuitive admin panel and user-friendly
 ### 🏠 Homepage
 ![Homepage](images/homepage.png)
 
+### 🔐 Register Page
+![Register](images/register.png)
+
 ### 👨‍🎓 Add Student
 ![Add Student](images/add_student.png)
 
@@ -72,9 +75,6 @@ Easily manage library records through an intuitive admin panel and user-friendly
 
 ### 📗 Issued Books
 ![Issued Books](images/issued_books.png)
-
-### 🔐 Register Page
-![Register](images/register.png)
 
 ### 👥 All Students
 ![Students](images/students.png)
